@@ -31,12 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin', #gives us the admin interface while managing our data
+    'django.contrib.auth', #provides authentication system
+    'django.contrib.contenttypes', #provides content types
+    'django.contrib.sessions', #provides session framework, temp server-side storage for user data
+    'django.contrib.messages', #used for displaying one time notifications to the user
+    'django.contrib.staticfiles', #provides handling of static files
+    'debug_toolbar', #provides a debug toolbar
+    'polls', #our app
 ]
 
 MIDDLEWARE = [
@@ -47,6 +49,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+]
+
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -105,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'JST'
 
 USE_I18N = True
 
